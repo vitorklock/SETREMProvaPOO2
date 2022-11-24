@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "a1e827d4-27df-4f68-be46-56547e4fc6d9",
+		"name": "Prova2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Supplier",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : \"1\",\r\n    \"name\": \"Pedro\",\r\n    \"address\": \"São Paulo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/supplier",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"supplier"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Suppliers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/supplier",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"supplier"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Supplier",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/supplier/1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"supplier",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"supplier\": {\r\n        \"id\": 1\r\n    },\r\n    \"description\": \"Duas compra de teste\",\r\n    \"situation\": \"delievered\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/transaction",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/transaction",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/transaction/2",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"transaction",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:8080",
+			"type": "default"
+		}
+	]
+}
