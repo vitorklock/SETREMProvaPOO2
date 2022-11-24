@@ -46,7 +46,9 @@ public class TransactionController {
 		//System.out.println(transaction.getSupplier().getId());
 		if(!supplierId.equals(0)) {	
 			Supplier supplier = supplierRepository.findById(supplierId).get();
-			supplier.getTransactions().add(transaction.getId());
+			ArrayList<Integer> transactions = supplier.getTransactions();
+			System.out.println(supplier);
+			transactions.add(transaction.getId());
 		}
 		
 		return repository.save(transaction);
@@ -56,6 +58,7 @@ public class TransactionController {
 	public Boolean delete(@PathVariable Integer id) {
 		Transaction transaction = repository.findById(id).get();
 		transaction.getSupplier().getTransactions().remove(id);
+		
 		repository.deleteById(id);
 		return true;
 	}
